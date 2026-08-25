@@ -3,8 +3,8 @@ class AwsCostlens < Formula
 
   desc "Read-only AWS FinOps CLI for cost analysis, waste detection, and credit monitoring"
   homepage "https://github.com/aws-all-star/aws-costlens"
-  url "https://github.com/aws-all-star/aws-costlens/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "6678b7ffdcd5b4f0cad72ae1a44bf1362578b15fab912aceb388064bcae47676"
+  url "https://github.com/aws-all-star/aws-costlens/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "d69a3fba8f95afbdc38dcc3b1b11e0966ab2300abf79efe0422a96b5dbb88037"
   license "MIT"
 
   depends_on "python@3.13"
