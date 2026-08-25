@@ -10,9 +10,7 @@ class AwsCostlens < Formula
   depends_on "python@3.13"
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install buildpath
-    bin.install_symlink libexec/"bin/aws-costlens"
+    virtualenv_install_with_resources
   end
 
   test do
