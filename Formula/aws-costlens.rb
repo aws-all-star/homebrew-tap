@@ -1,10 +1,10 @@
 class AwsCostlens < Formula
   include Language::Python::Virtualenv
 
-  desc "Read-only AWS FinOps CLI for cost analysis, waste detection, and credit monitoring"
+  desc "Read-only AWS FinOps CLI for cost, credit, waste, and trends"
   homepage "https://github.com/aws-all-star/aws-costlens"
-  url "https://github.com/aws-all-star/aws-costlens/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "f2ed6ae4fcaa9b86cc42245ff056a9c8ebfca86bdc3350c408f497be6452c150"
+  url "https://github.com/aws-all-star/aws-costlens/archive/refs/tags/v0.1.7.tar.gz"
+  sha256 "2f646351f9c6d633cf0a0d45691baeaa8e6394a42d9f6b1370433a6eb23172d0"
   license "MIT"
 
   depends_on "python@3.13"
@@ -84,6 +84,9 @@ class AwsCostlens < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/aws-costlens --help")
+    output = shell_output("#{bin}/aws-costlens --help")
+    assert_match "Usage", output
+    assert_match "cost", output
+    refute_match "visualize", output
   end
 end
